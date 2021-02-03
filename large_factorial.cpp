@@ -2,38 +2,36 @@
 #include <iostream>
 using namespace std;
 #define MAX 500
-int multiply(int x, int a[], int a_size) 
+int multiply(int x, int res[], int res_size);
+void factorial(int n)
+{
+    int res[MAX];
+    res[0] = 1;
+    int res_size = 1;
+    
+    for (int x = 2; x <= n;x++)
+        int res_size = multiply(x, res, res_size);
+    cout << "The factorial is " << endl;
+    for (int i = res_size-1; i >=0; i--)
+        cout << res[i];
+    //cout << "res size = " << res_size << endl;
+}
+int multiply(int x, int res[], int res_size) 
 {
     int carry = 0;
-    for (int i = 0; i < a_size; i++)
+    for (int i = 0; i < res_size; i++)
     {
-        int product = a[i] * x + carry;
-        a[i] = product % 10;
-        carry = product / 10;
+        int prod = res[i] * x + carry;
+        res[i] = prod % 10;
+        carry = prod/10;
     }
     while (carry)
     {
-        a[a_size] = carry % 10;
-        carry = carry / 10;
-        a_size++;
+        res[res_size] = carry%10;
+        carry = carry/10;
+        res_size++;
     }
-    return a_size;
-}
-void factorial(int n)
-{
-    int a[MAX];
-    a[0] = 1;
-    int a_size = 1;
-    
-    for (int i = 2; i <= n;i++)
-    {
-        int a_size = multiply(i, a, a_size);
-    }
-    cout << "The factorial is " << endl;
-    for (int x = n-1; x >=0; x--)
-    {
-        cout << a[x];
-    }
+    return res_size;
 }
 int main()
 {
