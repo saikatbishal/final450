@@ -76,7 +76,7 @@ void trap_water(int *a, int n)
 
 int main()
 {
-    int a[] = {7,4,0,9};
+    int a[] = {3,0,5,1,4,0,7};
     int n = sizeof(a) / sizeof(a[0]);
     trap_water(a, n);
     cout << endl;
