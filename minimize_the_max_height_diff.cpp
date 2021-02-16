@@ -20,7 +20,7 @@ int GetMinDiff(vector<int> a, int k)
     //     cout <<v[i].first<<" "<<v[i].second<<endl;
     // }
 
-     return 1;
+    return 1;
 }
 int main()
 {
