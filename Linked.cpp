@@ -1,18 +1,44 @@
 #include <iostream>
 using namespace std;
-
 struct Node
 {
     int data;
     Node *next;
 };
 Node *head;
+void Make_Tail_Head();
+void Print();
+void InsertAfter(int, int);
+void InsertAtEnd(int);
+void Delete_Node(int);
+void Delete_Node_key(int);
+void Search_Mid(Node *head);
+void Reverse_LL();
 void Insert(int x)
 {
     Node *temp = new Node();
     temp->data = x;
     temp->next = head;
     head = temp;
+}
+void Make_Tail_Head()
+{
+    if(head == NULL)
+        return;
+    Node *temp = head;
+    while(temp->next->next!=NULL)
+        temp = temp->next;
+    if(temp==head && temp->next == NULL)
+        return;
+    if (temp == head && temp->next != NULL)
+        Reverse_LL();
+    else
+    {
+        Node *last = temp->next;
+        last->next = head;
+        head = last;
+        temp->next = NULL;
+    }
 }
 void Print()
 {
@@ -50,7 +76,7 @@ void InsertAtEnd(int x)
 }
 void Reverse_LL()
 {
-    cout << "Reversed\n";
+    //cout << "Reversed\n";
     Node *next = NULL;
     Node *current = head;
     Node *prev = NULL;
@@ -83,6 +109,7 @@ void Search_mid(Node* head)
 }
 void Delete_Node(int n)
 {
+    //cout << "delete\n";
     Node *temp = head;
     if (n == 1)
     {
@@ -91,7 +118,7 @@ void Delete_Node(int n)
     }
 else
     {
-        for (int i = 0; i < n - 1; i++)
+        for (int i = 0; i < n - 2; i++)
             temp = temp->next;
         if (temp == NULL)
             return;
@@ -99,8 +126,9 @@ else
         temp->next = temp->next->next;
         delete temp2;
     }
+    return;
 }
-Delete_Node_key(int data)
+void Delete_Node_key(int data)
 {
     Node *temp = head;
     Node *prev = nullptr;
@@ -111,15 +139,34 @@ Delete_Node_key(int data)
     }
     else
     {
-        while (temp != NULL && temp->data != key)
+        while (temp != NULL && temp->data != data)
         {
             prev = temp;
             temp = temp->next;
         }
         if (temp == NULL)
             return;
-        prev->next = temp->net;
+        prev->next = temp->next;
         delete temp;
+    }
+}
+void Remove_Duplicates()
+{
+
+    cout << "Removing Duplicates\n";
+    Node *Temp = head;
+    Node *Next = Temp->next;
+    //bool ctr = false;
+    while (Temp->next != NULL)
+    {
+        if (Temp->data == Next->data)
+        {
+            //ctr = true;
+            Temp->next = Next->next;
+            Next = Temp->next;
+        }
+        Temp = Temp->next;
+        Next = Next->next;
     }
 }
 int main()
@@ -128,15 +175,18 @@ int main()
     cout << "How many numbers\n";
     int n,a,m;
     cin >> n;
+cout << "Enter numbers\n";
     for (int i = 0; i < n;i++)
-    {
-        cout << "Enter number\n";
+    {   
         cin >> a;
-        Insert(a);
-        Print();
+        InsertAtEnd(a);
+        //Print();
     }
-    //Reverse_LL();
-    //Print();
-    Search_mid(head);
+    // Reverse_LL();
+    Print();
+    // Make_Tail_Head();
+    // Print();
+    Remove_Duplicates();
+    Print();
     return 0;
 }
