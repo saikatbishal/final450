@@ -1,4 +1,5 @@
 #include <iostream>
+#include <bits/stdc++.h>
 using namespace std;
 struct Node
 {
@@ -39,6 +40,25 @@ void Make_Tail_Head()
         head = last;
         temp->next = NULL;
     }
+}
+void Make_Loop(int pos)
+{
+    Node *temp = head;
+    Node *temp2 = head;
+    while (temp->next != NULL)
+    {
+        temp = temp->next;
+    }
+        int pos1 = pos - 1;
+        while (pos1--)
+        {
+            temp2 = temp2->next;
+        }
+    temp->next = temp2;
+}
+void Detect_Loop()
+{
+
 }
 void Print()
 {
@@ -155,18 +175,42 @@ void Remove_Duplicates()
 
     cout << "Removing Duplicates\n";
     Node *Temp = head;
-    Node *Next = Temp->next;
+    Node *Next;
     //bool ctr = false;
     while (Temp->next != NULL)
     {
-        if (Temp->data == Next->data)
+        if (Temp->data == Temp->next->data)
         {
             //ctr = true;
-            Temp->next = Next->next;
-            Next = Temp->next;
+            Next = Temp->next->next;
+            free(Temp->next);
+            Temp->next = Next;
         }
-        Temp = Temp->next;
-        Next = Next->next;
+        else
+        {
+            //the pointer moves only when there is no duplicates ahead;
+            Temp= Temp->next;
+        }
+    }
+}
+void RemoveDuplicates()
+{
+    unordered_set<int> seen;
+    Node *curr = head;
+    Node *prev = NULL;
+    while (curr != NULL)
+    {
+        if (seen.find(curr->data) != seen.end())
+        {
+            prev->next = curr->next;
+            delete (curr);
+        }
+        else
+        {
+            seen.insert(curr->data);
+            prev = curr;
+        }
+        curr = prev->next;
     }
 }
 int main()
@@ -184,9 +228,10 @@ cout << "Enter numbers\n";
     }
     // Reverse_LL();
     Print();
+    //Make_Loop(3);
     // Make_Tail_Head();
     // Print();
-    Remove_Duplicates();
+    RemoveDuplicates();
     Print();
     return 0;
 }
