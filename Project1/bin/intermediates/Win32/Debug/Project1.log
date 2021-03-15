@@ -1,0 +1,8 @@
+﻿  bubblesort.cpp
+D:\final450\Project1\bubblesort.cpp(12,21): warning C4018: '<': signed/unsigned mismatch
+D:\final450\Project1\bubblesort.cpp(14,22): warning C4018: '<': signed/unsigned mismatch
+Source.obj : error LNK2005: "void __cdecl Print(class std::vector<int,class std::allocator<int> >)" (?Print@@YAXV?$vector@HV?$allocator@H@std@@@std@@@Z) already defined in bubblesort.obj
+Source.obj : error LNK2005: "class std::vector<int,class std::allocator<int> > __cdecl bubbleSort(class std::vector<int,class std::allocator<int> >)" (?bubbleSort@@YA?AV?$vector@HV?$allocator@H@std@@@std@@V12@@Z) already defined in bubblesort.obj
+Source.obj : error LNK2005: "void __cdecl swap(int *,int *)" (?swap@@YAXPAH0@Z) already defined in bubblesort.obj
+Source.obj : error LNK2005: _main already defined in bubblesort.obj
+D:\final450\Project1\bin\Win32\Debug\Project1.exe : fatal error LNK1169: one or more multiply defined symbols found
