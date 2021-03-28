@@ -13,7 +13,7 @@ void swap(int *a, int *b)
     *a = *b;
     *b = temp;
 }
-vector<int> next_permutation(vector<int> &a)
+void next_permutation(vector<int> &a)
 {
     // cout << "entered the function";
     int n = a.size(), i, j;
@@ -32,7 +32,6 @@ vector<int> next_permutation(vector<int> &a)
         swap(&a[i], &a[j]);
         reverse(a.begin() + i + 1, a.end());
     }
-    return (a);
 }
 int main()
 {
