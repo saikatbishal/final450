@@ -1,20 +1,19 @@
 #include <iostream>
 #include <bitset>
 #include<string>
+#define k 3
+#define k1 4
+#define bt bitset<8>
 using namespace std;
 int main(void)
 {
-    int x = 128+64+32+16+8+4+2+1;
-    cout << bitset<8>(x);
-    cout << "\n Enter k \n";
-    int k,k1;
-    cin >> k;
-    x = x & (~(1 << (k - 1)));
-    cout << x << " " << bitset<8>(x) << "\n";
-    cout << "Again enter k\n";
-    cin >> k1;
-    int xx = x | (1 << (k - 1));
-    cout << x<< " " << bitset<8>(x) << "\n";
-    x = x ^ (1 << (k - 1));
-    cout << bitset<8>(x);
+    int r = 27;
+    cout << "Original number\n";
+    cout << bt(r)<<"\n\n";
+    cout << "Turning off the " << k1 << "th bit\n";
+    int r1 = r & ~(1 << (k1 - 1));
+    cout << bt(r1);
+    int r2 = r1 | (1 << (k - 1));
+    cout << "\n\nTurning on the " << k << "rd bit\n";
+    cout << bt(r2);
 }
