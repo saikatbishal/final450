@@ -70,6 +70,28 @@ void checkSigns()
     else
         cout << "Same signs\n";
 }
+void addOne()
+{
+/* 
+    -x is equal to  ~x+1;
+    replace x with ~x;
+    -~x is equal to x+1;
+*/
+    srand(time(0));
+    int rNum = 1 + rand() % 100;
+    cout << rNum << " " << -~rNum<<endl;
+
+}
+void swapNum()
+{
+    int a = 5, b = 7;
+    a = a ^ b;
+    cout << "a = " << a << endl;
+    b = a ^ b;
+    cout << "b = " << b << endl;
+    a = a ^ b;
+    cout << "a = " << a << endl;
+}
 void checkNeg()
 {
     int n;
@@ -87,9 +109,10 @@ void checkNeg()
 }
 int main()
 {
-    int t;
-    cout << "Enter test cases : ";
-    cin >> t;
-    while (t--)
-        checkNeg();
+    // int t;
+    // cout << "Enter test cases : ";
+    // cin >> t;
+    // while (t--)
+    //     addOne();
+    swapNum();
 }
