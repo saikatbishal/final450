@@ -24,6 +24,6 @@ int switchKth(int n, int k)
     int ans = n & (~(1 << (k - 1)));
     if (ans != n)
         return ans;
-else
-    return n | (1 << (k - 1));
+    else
+        return n | (1 << (k - 1));
 }
