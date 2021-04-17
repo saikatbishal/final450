@@ -4,6 +4,7 @@
         "*.cpp": "cpp",
         "*.html": "html",
         "*.jsx": "javascript",
+<<<<<<< Updated upstream
         "iostream": "cpp",
         "algorithm": "cpp",
         "iosfwd": "cpp",
@@ -12,4 +13,10 @@
     "python.pythonPath": "C:\\Program Files\\Python39\\python.exe",
     "C_Cpp.errorSquiggles": "Disabled",
     "cmake.configureOnOpen": true
+=======
+        "xstring": "cpp",
+        "vector": "cpp",
+        "iostream": "cpp"
+    }
+>>>>>>> Stashed changes
 }

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="counter" style="left: 50px;margin:30px;">0</h1>
+    <button id="btn" onclick="func()">Click Me</button>
+<br>
+    <label for="fname">First Name</label>
+    <input style="margin: 5px;" id="fname" type="text" >
+    <button onclick="func1()">Click here</button>
+<br>
+
+<h3 id="showfname"></h3>
+
+
+
+<script>
+function func(){
+var text = document.getElementById('counter').innerHTML;
+text=parseInt(text)+1;
+document.getElementById('counter').innerHTML = text;
+}
+
+function func1(){
+
+var text = document.getElementById('fname').innerHTML;
+console.log(text);
+document.getElementById('showfname').innerHTML = text;}
+</script>
+</body>
+</html>
