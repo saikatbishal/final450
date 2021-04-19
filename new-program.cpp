@@ -1,9 +1,11 @@
 #include <iostream>
+#include <vector>
 using namespace std;
 int dir =0;
 
 int main()
 {
+
     int a[4][4] = {{16, 15, 14, 13}, {12,11,10,9}, {8, 7, 6,5}, {4, 3, 2, 1}}, m = 4, n = 4;
     vector<vector<int>> v;
     int top = 0, down = n - 1, left = 0, right = m - 1, dir = 0;
