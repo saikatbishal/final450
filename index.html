@@ -7,30 +7,30 @@
     <title>Document</title>
 </head>
 <body>
-    <h1 id="counter" style="left: 50px;margin:30px;">0</h1>
-    <button id="btn" onclick="func()">Click Me</button>
-<br>
-    <label for="fname">First Name</label>
-    <input style="margin: 5px;" id="fname" type="text" >
-    <button onclick="func1()">Click here</button>
-<br>
-
-<h3 id="showfname"></h3>
+<label for="nu"> Enter number</label>
+    <input type="text" id="nu"/>
+    <button onclick="fib()">Click</button>
+    <h3 id="answer"></h3>
+</body>
+</html>
 
 
 
 <script>
-function func(){
-var text = document.getElementById('counter').innerHTML;
-text=parseInt(text)+1;
-document.getElementById('counter').innerHTML = text;
+const fib = (n, memo = {}) => {
+    if (n in memo) return memo[n];
+    if (n <= 2) return 1;
+    memo[n] = fib(n - 1, memo) + fib(n - 2, memo);
+    return memo[n];
 }
-
-function func1(){
-
-var text = document.getElementById('fname').innerHTML;
-console.log(text);
-document.getElementById('showfname').innerHTML = text;}
+const fibo = () => {
+    var n = document.getElementById('nu').nodeValue;
+    console.log(n);
+    for (let index = 1; index <= n; index++) {
+        console.log(index + " = " + fib(index));
+        document.getElementById('answer').innerHTML = fib(index);
+    }
+}
 </script>
 </body>
 </html>
