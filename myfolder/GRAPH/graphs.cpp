@@ -1,25 +1,33 @@
 #include <bits/stdc++.h>
 using namespace std;
-void adjacencyList()
+namespace saikat
 {
-int n,m;
-cin>>n>>m;
-vector<int> adj[n+1];
-for(int i=0;i<m;i++)
-{
-int u,v;
-adj[u].push_back(v);
-adj[v].push_back(u);
+    int age;
+    char grade;
+    string username;
+    double rating;
 }
 
+void adjacencyList()
+{
+    int n,m;
+    cin>>n>>m;
+    vector<int> adj[n+1];
+    for(int i=0;i<m;i++)
+    {
+        int u,v;
+        adj[u].push_back(v);
+        adj[v].push_back(u);
+    }
 }
 vector<int> bfs_traversal(int V,vector<int> adj[])
 {
-vector<int> bfs;
-vector<int> vis(v+1,0);
-for(int i-0;i<=V;i++){
+    vector<int> bfs;
+    vector<int> vis(v+1,0);
+    for(int i-0;i<=V;i++)
+    {
 
-}
+    }
 }
 int main()
 {
