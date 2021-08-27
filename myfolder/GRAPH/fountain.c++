@@ -5,10 +5,10 @@ int fountainActivation(vector<int> a)
 {
     int N = a.size();
     int dp[N];
-      for(int i=0;i<N;i++)
-      {
-            dp[i]=-1;
-      }
+    for(int i=0;i<N;i++)
+    {
+        dp[i]=-1;
+    }
 
     int left;
     int right;
@@ -33,6 +33,6 @@ int fountainActivation(vector<int> a)
 }
 int main()
 {
-    vector<int> a = { 1, 1, 1 };
+    vector<int> a = { 1, 1, 1, 1 };
     cout << fountainActivation(a);
 }
