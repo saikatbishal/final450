@@ -6,6 +6,7 @@ struct Node
     int data;
     Node *next;
 };
+//wotking today - 21-12-21
 Node *head;
 void Make_Tail_Head();
 void Print();
